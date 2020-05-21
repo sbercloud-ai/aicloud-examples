@@ -11,3 +11,4 @@
 
 Основные примеры: 
 * [Стартовый пример](quick-start) показывает, как создать задачу распределеного обучения на `Horovod` и `TensorFlow 1` 
+* [Пример обучения модели](notebooks_gpu/pytorch_tensorboard_mlflow) в AI Cloud из Jupyter Notebook, подключенного к GPU доступен по ссылкена `Pytorch`
