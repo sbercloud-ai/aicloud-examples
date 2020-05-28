@@ -36,11 +36,11 @@ if __name__ == "__main__":
     # Groupby
     #
     start_time = time.time()
-    pdf.groupby('a')
+    pdf.groupby('a').mean()
     print(f'CPU groupby time = {round(time.time() - start_time, 3)} sec')
 
     start_time = time.time()
-    gdf.groupby('a')
+    gdf.groupby('a').mean()
     print(f'GPU groupby time = {round(time.time() - start_time, 3)} sec')
 
     #
