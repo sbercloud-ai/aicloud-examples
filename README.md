@@ -9,9 +9,9 @@
  2. Обучение модели напрямую из Jupyter Notebook, подключенного к GPU
  3. Создавать задачи с помощью публичного REST API.
 
-Основные примеры: 
-* [Стартовый пример](quick-start) показывает, как создать задачу распределеного обучения на `Horovod` и `TensorFlow 1` 
-* [Пример обучения модели](notebooks_gpu/pytorch_tensorboard_mlflow) в AI Cloud из Jupyter Notebook, подключенного к GPU доступен по ссылкена `Pytorch`
+Стартовые примеры для обучения в директории [quick-start](quick-start):
+* [Обучение модели в ноутбуке с GPU](quick-start/notebooks_gpu) в AI Cloud из Jupyter Notebook, подключенного к GPU доступен по ссылкена `Pytorch`
+* [Обучение модели через Training Job API](quick-start/job_launch) показывает, как запустить создать задачу распределеного обучения (`Training Job`) на `Horovod` и `TensorFlow 1` 
 
 ## Предпроцессинг данных
 

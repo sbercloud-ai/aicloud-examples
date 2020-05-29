@@ -1,0 +1,4 @@
+# Used libraries (already in Jupyter GPU image)
+# pytorch
+# torchvision
+# mlflow
