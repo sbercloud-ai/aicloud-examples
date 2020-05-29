@@ -1,2 +1,3 @@
-tensorflow-gpu==1.15.2
+# tensorflow-gpu 1.15 already installed in registry.aicloud.sbcp.ru/horovod-tf15
+# with other libraries, we add one more:
 requests
