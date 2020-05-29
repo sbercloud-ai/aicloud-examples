@@ -132,7 +132,7 @@ def cnn_model_fn(features, labels, mode):
 
 
 # Hack due to our Internet-policies
-def load_data(path='/home/jovyan/tfs_from_ld_data/mnist.npz'):
+def load_data(path='/home/jovyan/quick-start/job_launch/mnist.npz'):
     """Loads the MNIST dataset.
     # Returns
         Tuple of Numpy arrays: `(x_train, y_train), (x_test, y_test)`.
@@ -178,7 +178,7 @@ def main(unused_argv):
 
     # Horovod: save checkpoints only on worker 0 to prevent other workers from
     # corrupting them.
-    model_dir = '/home/jovyan/tfs_to_ld_data/checkpoints_tf/mnist_convnet_model' if hvd.rank() == 0 else None
+    model_dir = '/home/jovyan/quick-start/job_launch/checkpoints_tf/mnist_convnet_model' if hvd.rank() == 0 else None
 
     # Create the Estimator
     mnist_classifier = tf.estimator.Estimator(
