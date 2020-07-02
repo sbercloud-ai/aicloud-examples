@@ -13,6 +13,9 @@
 * [Обучение модели в ноутбуке с GPU](quick-start/notebooks_gpu) в AI Cloud из Jupyter Notebook, подключенного к GPU доступен по ссылкена `Pytorch`
 * [Обучение модели через Training Job API](quick-start/job_launch) показывает, как запустить создать задачу распределеного обучения (`Training Job`) на `Horovod` и `TensorFlow 1` 
 
+Примеры для Pytorch:
+* В папке [pytorch-example](pytorch-example) находится пример создания задачи распределеного обучения модели с двумя типами запуска: `horovod` и `pytorch` (он же `Pytorch.Distributed`).
+
 ## Предпроцессинг данных
 
 * Загрузка/выгрузка данных на S3 в [стартовом примере](quick-start)
