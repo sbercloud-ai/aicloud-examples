@@ -1,9 +1,9 @@
-# Запуск обучения моделей на Jupyter GPU
+# Запуск обучения моделей из Jupyter-ноутбука, подключенного к GPU
 
 В данном примере показано как использовать [DataParallel](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html).
 
 Experiment tracking осуществляется с помощью библиотеки `MLflow`.
 
-Для запуска примера закачайте файлы из списка ниже в веб-интерфейс [Jupyter Server'а внутри AICloud](https://aicloud.sbercloud.ru/_/jupyter/).
+Для запуска примера загрузите в веб-интерфейс [Jupyter-сервера внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
 
- * [pytorch_tensorboard_mlflow.ipynb](pytorch_tensorboard_mlflow.ipynb) - обучение модели на Jupyter GPU
+ * [pytorch_tensorboard_mlflow.ipynb](pytorch_tensorboard_mlflow.ipynb) - обучение модели из Jupyter-ноутбука, подключенного к GPU.

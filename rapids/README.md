@@ -1,11 +1,11 @@
 # Знакомство с библиотекой Rapids
 
-В данном примере показано как можно ускорить препроцессинг данных на GPU, используя библиотеку [Rapids](https://rapids.ai/) и [Dask](https://dask.org).
+В данном примере показано, как можно ускорить препроцессинг данных на GPU, используя библиотеки [Rapids](https://rapids.ai/) и [Dask](https://dask.org).
 
-Для запуска примера закачайте файлы из списка ниже в веб-интерфейс [Jupyter Server'а внутри AICloud](https://aicloud.sbercloud.ru/_/jupyter/).
+Для запуска примера загрузите в веб-интерфейс [Jupyter-сервера внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
 
- * rapids_preprocessing.ipynb (файл, отправляющий задачи на кластер Christofari)
- * cupy_cudf_example.py (сравнение скорости выполнения операций `groupby`,`merge`,`apply` на GPU по сравннению с CPU)
- * dask_example.py (использование внутри одного DGX-2 до 16 GPU)
+ * rapids_preprocessing.ipynb (отправка задач на кластер "Кристофари")
+ * cupy_cudf_example.py (сравнение скорости выполнения операций `groupby`,`merge`,`apply` на GPU и CPU)
+ * dask_example.py (использование до 16 GPU внутри одного DGX-2)
  
- * [Rapids в ноутбуке с GPU](RapidsJupyterNotebooks) в AI Cloud из Jupyter Notebook, подключенного к GPU доступен в образе jupyter-rapids
+ * Запускайте [пример для препроцессинга данных с использованием библиотеки Rapids](RapidsJupyterNotebooks) в образе jupyter-rapids.
