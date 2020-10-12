@@ -92,7 +92,7 @@ def run(rank, size, local_rank):
     model.to(device)
     model = nn.parallel.DistributedDataParallel(model, device_ids=[local_rank])
     
-    data = np.load(BASE_DIR + '/mnist.npz')
+    data = np.load(BASE_DIR + '/mnist.npz', allow_pickle=True)
     mnist_images_train = np.expand_dims(data['x_train'], 1)
     mnist_labels_train = data['y_train']
 

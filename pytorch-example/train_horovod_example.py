@@ -18,7 +18,7 @@ import pathlib
 BASE_DIR = str(pathlib.Path(__file__).parent.absolute())
 print(f"Working dir: {BASE_DIR}")
 
-data = np.load(BASE_DIR + '/mnist.npz')
+data = np.load(BASE_DIR + '/mnist.npz', allow_pickle=True)
 mnist_images_train = np.expand_dims(data['x_train'], 1)
 mnist_labels_train = data['y_train']
 
