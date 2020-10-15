@@ -26,6 +26,8 @@ import horovod.tensorflow as hvd
 
 from tensorflow import keras
 
+import mlflow
+
 tf.logging.set_verbosity(tf.logging.INFO)
 
 
@@ -219,6 +221,13 @@ def main(unused_argv):
         shuffle=False)
     eval_results = mnist_classifier.evaluate(input_fn=eval_input_fn)
     print(eval_results)
+    if hvd.rank() == 0:
+        # Here we log metrics of our model to mlflow
+        mlflow.set_tracking_uri('file:/home/jovyan/mlruns')
+        mlflow.set_experiment("quick-start/job_launch")
+        with mlflow.start_run(nested=True) as run:
+            mlflow.log_metric("accuracy", eval_results.get("accuracy"))
+            mlflow.log_metric("loss", eval_results.get("loss"))
 
 
 if __name__ == "__main__":
