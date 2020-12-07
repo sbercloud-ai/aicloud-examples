@@ -8,14 +8,14 @@
  * `type="horovod"` для запуска обучения с использованием библиотеки `Horovod`.
  * `type="pytorch"` для запуска обучения с использованием `DistributedDataParallel` и `Pytorch`.
 
-Для запуска примера загрузите в веб-интерфейс [Jupyter-сервера внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
+Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
 
  * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на кластер "Кристофари")
  * [train_distributed_example.py](train_distributed_example.py) (распределенное обучение с использованием `DistributedDataParallel` из библиотеки `Pytorch.distributed`)
  * [train_horovod_example.py](train_horovod_example.py) (распределенное обучение с использованием бибилотеки `Horovod`)
  
  
- Для запуска и отладки скриптов из под Jupyter Notebook:
+ Для запуска и отладки скриптов из-под Jupyter Notebook:
  
  Выберите один из образов с пометкой *horovod* (прим. jupyter-horovod-tf15)
  
