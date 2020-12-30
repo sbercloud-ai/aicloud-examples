@@ -1,0 +1,3 @@
+# tensorflow-gpu 2.3.0 already installed in registry.aicloud.sbcp.ru/base/horovod-cuda10.1-tf2.3.0
+# with other libraries, we add one more:
+requests
