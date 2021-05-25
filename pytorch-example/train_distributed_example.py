@@ -40,8 +40,9 @@ class CNNClassifier(nn.Module):
         return F.log_softmax(x)
 
     
-def train(epoch, clf, optimizer, train_loader, device, writer, rank):
+def train(epoch, clf, optimizer, train_loader, train_sampler, device, writer, rank):
     clf.train()  # set model in training mode (need this because of dropout)
+    train_sampler.set_epoch(epoch)  # shuffle samples every epoch
 
     # dataset API gives us pythonic batching
     for batch_id, (data, target) in enumerate(train_loader):
@@ -59,30 +60,41 @@ def train(epoch, clf, optimizer, train_loader, device, writer, rank):
         optimizer.step()
 
         if (batch_id % 100 == 0) and (rank == 0):
+            # log loss calculated on worker with 0 rank
             print(f'train loss = {loss.item()}')
             writer.add_scalar('Train', loss.item(), epoch * len(train_loader) + batch_id)
+            
+            
+# average over multiple workers
+def metric_average(val):
+    dist.all_reduce(val)
+    avg_tensor = val / dist.get_world_size()
+    return avg_tensor.item()
 
 
-def test(epoch, clf, test_loader, device, writer, rank):
+def test(epoch, clf, test_loader, test_sampler, device, writer, rank):
     clf.eval()  # set model in inference mode (need this because of dropout)
-    test_loss = 0
-    correct = 0
+    test_loss = 0.
+    correct = 0.
 
     for data, target in test_loader:
         data = data.to(device)
         target = target.to(device)
         output = clf(data)
-        test_loss += F.nll_loss(output, target).item()
+        test_loss += F.nll_loss(output, target, size_average=False)
         pred = output.data.max(1)[1]  # get the index of the max log-probability
-        correct += pred.eq(target.data).cpu().sum()
+        correct += pred.eq(target.data).sum()
     
-    test_loss = test_loss
-    test_loss /= (len(test_loader) // dist.get_world_size())  # loss function already averages over batch size
-    accuracy = 100. * correct / (len(test_loader.dataset) // dist.get_world_size())
+    # use test_sampler to determine the number of examples in
+    # this worker's partition.
+    test_loss /= len(test_sampler)
+    test_accuracy = correct / len(test_sampler)
+    
+    test_loss = metric_average(test_loss)
+    test_accuracy = metric_average(test_accuracy)
     if rank == 0:
-        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
-            test_loss, correct, len(test_loader.dataset) / dist.get_world_size(),
-            accuracy))
+        print('\nTest set: Average loss: {:.4f}, Accuracy: {:.1f}%\n'.format(
+            test_loss, 100. * test_accuracy))
 
     
 def run(rank, size, local_rank):
@@ -115,7 +127,7 @@ def run(rank, size, local_rank):
     
     current_time = datetime.now().strftime("%Y%m%d-%H_%M")
     if rank == 0:
-        writer = SummaryWriter(log_dir=BASE_DIR + 'logs/log_' + current_time)
+        writer = SummaryWriter(log_dir=BASE_DIR + '/logs/log_' + current_time)
     else:
         writer = None
 
@@ -128,10 +140,10 @@ def run(rank, size, local_rank):
     for epoch in range(num_epochs):
         if rank == 0:
             print("Epoch %d" % epoch)
-        train(epoch, model, optimizer, train_loader, device, writer, rank)
-        test(epoch, model, test_loader, device, writer, rank)
+        train(epoch, model, optimizer, train_loader, train_sampler, device, writer, rank)
+        test(epoch, model, test_loader, test_sampler, device, writer, rank)
         if rank == 0:
-            torch.save(model.state_dict(), BASE_DIR +'logs/log_' + current_time + f"/model_epoch_{epoch}.bin")
+            torch.save(model.state_dict(), BASE_DIR +'/logs/log_' + current_time + f"/model_epoch_{epoch}.bin")
     if rank == 0:
         writer.close()
     

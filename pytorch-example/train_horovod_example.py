@@ -73,7 +73,7 @@ test_loader = torch.utils.data.DataLoader(dataset_test, batch_size=50, sampler=t
 # add Tensorboard writer
 current_time = datetime.now().strftime("%Y%m%d-%H_%M")
 if hvd.rank() == 0:
-    writer = SummaryWriter(log_dir=BASE_DIR + 'logs/log_' + current_time)
+    writer = SummaryWriter(log_dir=BASE_DIR + '/logs/log_' + current_time)
 else:
     writer = None
 
@@ -87,6 +87,7 @@ hvd.broadcast_parameters(clf.state_dict(), root_rank=0)
 
 def train(epoch, clf, optimizer, writer, rank):
     clf.train()  # set model in training mode (need this because of dropout)
+    train_sampler.set_epoch(epoch)  # shuffle samples every epoch
 
     # dataset API gives us pythonic batching
     for batch_id, (data, target) in enumerate(train_loader):
@@ -104,30 +105,42 @@ def train(epoch, clf, optimizer, writer, rank):
         optimizer.step()
 
         if (batch_id % 100 == 0) and (rank == 0):
+            # log loss calculated on worker with 0 rank
             print(f'train loss = {loss.item()}')
             writer.add_scalar('Train', loss.item(), epoch * len(train_loader) + batch_id)
+            
+
+# average over multiple workers
+def metric_average(val, name):
+    tensor = torch.tensor(val)
+    avg_tensor = hvd.allreduce(tensor, name=name)
+    return avg_tensor.item()
 
 
 def test(epoch, clf, writer, rank):
     clf.eval()  # set model in inference mode (need this because of dropout)
-    test_loss = 0
-    correct = 0
+    test_loss = 0.
+    correct = 0.
 
     for data, target in test_loader:
         data = data.to(device)
         target = target.to(device)
         output = clf(data)
-        test_loss += F.nll_loss(output, target).item()
+        test_loss += F.nll_loss(output, target, size_average=False).item()
         pred = output.data.max(1)[1]  # get the index of the max log-probability
         correct += pred.eq(target.data).cpu().sum()
+
+    # use test_sampler to determine the number of examples in
+    # this worker's partition.
+    test_loss /= len(test_sampler)
+    test_accuracy = correct / len(test_sampler)
     
-    test_loss = test_loss
-    test_loss /= (len(test_loader) // hvd.size())  # loss function already averages over batch size
-    accuracy = 100. * correct / (len(test_loader.dataset) // hvd.size())
+    test_loss = metric_average(test_loss, 'avg_loss')
+    test_accuracy = metric_average(test_accuracy, 'avg_accuracy')
+    
     if rank == 0:
-        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
-            test_loss, correct, len(test_loader.dataset) / hvd.size(),
-            accuracy))
+        print('\nTest set: Average loss: {:.4f}, Accuracy: {:.1f}%\n'.format(
+            test_loss, 100. * test_accuracy))
 
 
 num_epochs = 3
@@ -141,6 +154,6 @@ for epoch in range(num_epochs):
     train(epoch, clf, optimizer, writer, hvd.rank())
     test(epoch, clf, writer, hvd.rank())
     if hvd.rank() == 0:
-        torch.save(clf.state_dict(), BASE_DIR + 'logs/log_' + current_time + f"/model_epoch_{epoch}.bin")
+        torch.save(clf.state_dict(), BASE_DIR + '/logs/log_' + current_time + f"/model_epoch_{epoch}.bin")
 if hvd.rank() == 0:
     writer.close()
