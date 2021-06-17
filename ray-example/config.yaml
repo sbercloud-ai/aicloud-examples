@@ -1,0 +1,9 @@
+batch_size: 64  # train batch size
+test_batch_size: 1000 # test batch size
+
+num_slots: 1  # gpu count
+
+hyperparameters:
+  type: "grid"
+  epochs: [3, 5]  # epochs
+  lr: [0.01, 0.02, 0.03]  # learning rate
