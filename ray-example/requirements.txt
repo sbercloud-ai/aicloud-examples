@@ -1,0 +1,4 @@
+protobuf
+pyyaml
+ray[default]
+horovod
