@@ -9,7 +9,8 @@
 Пример включает в себя:
 
  * [mnist.npz](mnist.npz) (датасет с рукописными цифрами)
- * [quick-start.ipynb](quick-start.ipynb) (Jupyter-ноутбук для загрузки на [сервер](https://mlspace.aicloud.sbercloud.ru/mlspace/jupyter-server))
+ * [quick-start-v100.ipynb](quick-start-v100.ipynb) (Jupyter-ноутбук для загрузки на [сервер](https://mlspace.aicloud.sbercloud.ru/mlspace/jupyter-server))
+ * [quick-start-a100.ipynb](quick-start-a100.ipynb) (Jupyter-ноутбук для загрузки на регион A100 [сервер](https://mlspace.aicloud.sbercloud.ru/mlspace/jupyter-server))
  * [requirements.txt](requirements.txt) (файл с зависимостями, который используется для сборки кастомного контейнера)
  * [tensorflow_mnist_estimator.py](tensorflow_mnist_estimator.py) (код модели на `Keras`, `TensorFlow 2` и `Horovod`)
 
