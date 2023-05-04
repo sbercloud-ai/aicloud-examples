@@ -17,15 +17,15 @@ cli_jobs = typer.Typer()
 def cli_jobs_run(
         script: str,
         base_image: str,
+        instance_type: str,
         n_workers: int = 1,
-        n_gpus: int = 1,
         type: str = "horovod",
 ):
     result = Job(
         script=script,
         base_image=base_image,
+        instance_type=instance_type,
         n_workers=n_workers,
-        n_gpus=n_gpus,
         type=type
     ).submit()
     print(result)
