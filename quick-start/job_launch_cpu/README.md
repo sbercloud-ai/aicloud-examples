@@ -2,7 +2,7 @@
 
 Пример из данного раздела позволит пользователям научиться отправлять задачи для обучения моделей на CPU.
 
-Для запуска примера достаточно открыть ноутбук [quick-start.ipynb](quick-start.ipynb) в веб-интерфейсе [Jupyter Server внутри ML Space](https://aicloud.sbercloud.ru/_/jupyter/).
+Для запуска примера достаточно открыть ноутбук [quick-start.ipynb](quick-start.ipynb) в веб-интерфейсе [Jupyter Server внутри ML Space](https://console.cloud.ru/projects/).
 
 В этом примере происходит обучение с помощью библиотек `XGBoost` на маленьком датасете `California House Pricing` с помощью создания и отправки CPU-задачи.
 

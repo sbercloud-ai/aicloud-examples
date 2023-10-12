@@ -7,7 +7,7 @@
 
  Для типа сервера "Instance":
 
- Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
+ Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри AI Cloud](https://console.cloud.ru/projects/) следующие файлы:
 
  * [train_ray_horovod_example.py](train_ray_horovod_example.py) (распределенное обучение с использованием бибилотеки `Horovod`)
  * [requirements.txt](requirements.txt) (файл с зависимостями)
