@@ -10,7 +10,11 @@
 
 Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри ML Space](https://console.cloud.ru/projects/) следующие файлы:
 
- * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на суперкомпьютер Christofari)
+ * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на суперкомпьютер Christofari).
+
+   - Если Jupyter Server не существует, создайте его по [инструкции](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html).
+   - Если Jupyter Server создан, воспользуйтесь [инструкцией по подключению к существующему](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
+
  * [train_distributed_example.py](train_distributed_example.py) (распределенное обучение с использованием `DistributedDataParallel` из библиотеки `Pytorch.distributed`)
  * [train_horovod_example.py](train_horovod_example.py) (распределенное обучение с использованием бибилотеки `Horovod`)
  
