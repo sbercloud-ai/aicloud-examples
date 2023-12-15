@@ -2,13 +2,13 @@
 
 Пример из данного раздела позволит пользователям научиться отправлять задачи для обучения моделей на CPU.
 
-Для запуска примера достаточно открыть ноутбук [quick-start.ipynb](quick-start.ipynb) в веб-интерфейсе [Jupyter Server внутри ML Space](https://console.cloud.ru/projects/).
+Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
 
 В этом примере происходит обучение с помощью библиотек `XGBoost` на маленьком датасете `California House Pricing` с помощью создания и отправки CPU-задачи.
 
 Рекомендуется использовать `XGBoost` на GPU, либо использовать `Spark` при расчетах больших датасетов.
 
-Пример включает в себя:
+После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри ML Space:
 
  * [cal_housing_py3.pkz](cal_housing_py3.pkz) (датасет `California House Pricing`)
  * [quick-start.ipynb](quick-start.ipynb) (Jupyter Notebook который запустит задачу обучения)

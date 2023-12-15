@@ -4,11 +4,9 @@
 
 Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
 
-После подключения к Jupyter Server необходимо загрузить файл [quick-start.ipynb](quick-start.ipynb) в веб-интерфейс Jupyter Server внутри ML Space.
-
 В этом примере происходит обучение сверточной нейронной сети с помощью библиотек `Horovod` и `Tensorflow 1` на датасете `Mnist` посредством создания и отправки задачи на кластер "Кристофари".
 
-Пример включает в себя:
+После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри ML Space:
 
  * [mnist.npz](mnist.npz) (датасет с рукописными цифрами)
  * [quick-start.ipynb](quick-start.ipynb) (Jupyter Notebook)
