@@ -8,9 +8,11 @@
  * `type="horovod"` для запуска обучения с использованием библиотеки `Horovod`.
  * `type="pytorch"` для запуска обучения с использованием `DistributedDataParallel` и `Pytorch`.
 
-Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри AI Cloud](https://aicloud.sbercloud.ru/_/jupyter/) следующие файлы:
+Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
 
- * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на кластер "Кристофари")
+После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри ML Space:
+
+ * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на суперкомпьютер Christofari).
  * [train_distributed_example.py](train_distributed_example.py) (распределенное обучение с использованием `DistributedDataParallel` из библиотеки `Pytorch.distributed`)
  * [train_horovod_example.py](train_horovod_example.py) (распределенное обучение с использованием бибилотеки `Horovod`)
  
