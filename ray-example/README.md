@@ -7,7 +7,7 @@
 
  Для типа сервера "Instance":
 
- Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри AI Cloud](https://console.cloud.ru/projects/) следующие файлы:
+ Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html):
 
  * [train_ray_horovod_example.py](train_ray_horovod_example.py) (распределенное обучение с использованием бибилотеки `Horovod`)
  * [requirements.txt](requirements.txt) (файл с зависимостями)

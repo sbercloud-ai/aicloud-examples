@@ -2,10 +2,7 @@
 
 Пример из данного раздела позволит пользователям научиться отправке задач для распределенного обучения моделей.
 
-Для запуска примера достаточно загрузите [quick-start.ipynb](quick-start.ipynb) в веб-интерфейс [Jupyter-сервера внутри ML Space](https://console.cloud.ru/projects/).
-
-- Если Jupyter Server не существует, создайте его по [инструкции](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html).
-- Если Jupyter Server создан, воспользуйтесь [инструкцией по подключению к существующему](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
+Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html)
 
 В этом примере происходит обучение сверточной нейронной сети с помощью библиотек `Keras`, `TensorFlow 2` и `Horovod` на датасете `MNIST` посредством создания и отправки задачи на кластер "Кристофари".
 

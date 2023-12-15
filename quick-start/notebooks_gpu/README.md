@@ -4,6 +4,6 @@
 
 Experiment tracking осуществляется с помощью библиотеки `MLflow`.
 
-Для запуска примера загрузите в веб-интерфейс [Jupyter Server внутри ML Space](https://console.cloud.ru/projects/) следующие файлы:
+Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html):
 
  * [pytorch_tensorboard_mlflow.ipynb](pytorch_tensorboard_mlflow.ipynb) - обучение модели из Jupyter-ноутбука, подключенного к GPU.
