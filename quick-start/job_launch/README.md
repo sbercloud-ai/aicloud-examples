@@ -1,8 +1,12 @@
 # Пример обучения на GPU в регионе с помощью `client-lib` 
 
-В этом примере происходит обучение сверточной нейронной сети с помощью библиотек `Horovod` и `Tensorflow 1` на датасете MNIST посредством создания и отправки задачи в регион Christofari.V100.
+Пример из данного раздела позволит пользователям научиться отправке задач для распределенного обучения моделей.
 
-Пример включает в себя:
+Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
+
+В этом примере происходит обучение сверточной нейронной сети с помощью библиотек `Horovod` и `Tensorflow 1` на датасете `Mnist` посредством создания и отправки задачи на кластер "Кристофари".
+
+После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри ML Space:
 
  * [mnist.npz](mnist.npz) — датасет с рукописными цифрами.
  * [quick-start.ipynb](quick-start.ipynb) — Jupyter-ноутбук.
