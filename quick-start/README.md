@@ -4,7 +4,7 @@
 
 На схеме примеры сгруппированы по инструментам для обучения. Ниже находятся ссылки на каждый пример для Jupyter Notebook с кратким описанием. 
 
-Подробнее об API ML Space — в [документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/api.html).
+Подробнее об использовании API ML Space, в том числе для задач обучения — в [быстром старте по API](../public-api-example/ml_space_public_api.ipynb) и [пользовательской документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/api.html).
 
 ![](../img/qs_training_types.png)
 
