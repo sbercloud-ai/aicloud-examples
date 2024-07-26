@@ -10,7 +10,7 @@ import mlflow
 
 # BASE_DIR will be like '/home/jovyan/DemoExample/'
 BASE_DIR = pathlib.Path().absolute()
-print(f"Working dir: {BASE_DIR}")
+print(f'Working dir: {BASE_DIR}')
 
 # Loading data
 housing = fetch_california_housing(data_home=BASE_DIR)

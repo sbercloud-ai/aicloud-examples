@@ -19,10 +19,15 @@ import mlflow
 import numpy as np
 import os
 import tensorflow as tf
+import pathlib
+
+# BASE_DIR will be like '/home/jovyan/DemoExample/'
+BASE_DIR = str(pathlib.Path(__file__).parent.absolute())
+print(f'Working dir: {BASE_DIR}')
 
 
 # Hack due to our Internet-policies
-def load_data(path='/home/jovyan/quick-start/job_launch_tf2/mnist.npz'):
+def load_data(path=f'{BASE_DIR}/mnist.npz'):
     """Loads the MNIST dataset.
     # Returns
         Tuple of Numpy arrays: `(x_train, y_train), (x_test, y_test)`.
@@ -72,7 +77,7 @@ if __name__ == "__main__":
 
     # Horovod: save checkpoints only on worker 0 to prevent other workers from
     # corrupting them.
-    model_dir = '/home/jovyan/quick-start/job_launch_tf2/checkpoints_tf/mnist_convnet_model' if hvd.rank() == 0 else None
+    model_dir = f'{BASE_DIR}/checkpoints_tf/mnist_convnet_model' if hvd.rank() == 0 else None
 
     train_dataset = tf.data.Dataset.from_tensor_slices(
         (tf.cast(train_data, tf.float32),
@@ -134,7 +139,7 @@ if __name__ == "__main__":
 
     # Horovod: save checkpoints only on worker 0 to prevent other workers from corrupting them.
     if hvd.rank() == 0:
-        checkpoint_path = '/home/jovyan/quick-start/job_launch_tf2/checkpoints_tf/mnist_convnet_model/checkpoint.ckpt'
+        checkpoint_path = f'{BASE_DIR}/checkpoints_tf/mnist_convnet_model/checkpoint.ckpt'
         callbacks.append(tf.keras.callbacks.ModelCheckpoint(
             filepath=checkpoint_path,
             save_weights_only=True,
