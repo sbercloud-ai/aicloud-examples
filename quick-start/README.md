@@ -20,7 +20,7 @@
 
 Подробнее о создании Jupyter Server — в [документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html).
 
-## 2. Обучение в регионе с помощью `client-lib` 
+## 2. Обучение в регионе с помощью `client_lib` 
 
 При таком варианте обучения можно задействовать до 1000 GPU. Оплата происходит за фактическое время исполнения задачи: от старта до окончания обучения.
 
@@ -30,10 +30,12 @@
 
 * [Обучение модели на GPU с применением Tensorflow 2](job_launch_tf2) показывает, как создать и запустить задачу распределенного обучения (training job) на `Keras`, `Horovod` и `TensorFlow 2`.
 
-  В примере решается задача классификации на учебном датасете MNIST.
+  В примере решается задача классификации на учебном датасете MNIST. 
+
+  Рассмотрено сохранение контрольных точек обучения (чекпоинтов) и сборка кастомного Docker-образа.
 
 * [Обучение модели на CPU](job_launch_cpu) показывает, как создать и запустить задачу, не требующую GPU.
 
   В примере решается задача предсказания цен домов.
 
-Подробнее о работе с `client-lib` — в [документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/client-lib.html).
+Подробнее о работе с `client_lib` — в [документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/client-lib.html).

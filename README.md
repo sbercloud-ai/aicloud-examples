@@ -14,7 +14,7 @@
 
    [Обучение на PyTorch](quick-start/job_launch_pt).
 
-   [Обучение на TensorFlow 2](quick-start/job_launch_tf2).
+   [Обучение на TensorFlow 2](quick-start/job_launch_tf2). В примере также рассмотрено сохранение контрольных точек обучения (чекпоинтов) и сборка кастомного Docker-образа.
 
    [Обучение на CPU](quick-start/job_launch_cpu).
 
