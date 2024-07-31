@@ -1,6 +1,6 @@
 # Пример обучения моделей из Jupyter Server на выделенных GPU
 
-В этом примере решается задача классификации на учебном датасете MNIST. 
+Этот пример поможет научиться решать задачу классификации на учебном датасете MNIST. 
 
 Использован [DataParallel](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html), experiment tracking осуществляется с помощью библиотеки `MLflow`.
 

@@ -158,30 +158,3 @@ def init_processes(fn, local_rank, backend='nccl'):
 if __name__ == "__main__":
     local_rank = int(os.environ["LOCAL_RANK"])
     init_processes(run, local_rank, backend='nccl')
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
