@@ -26,6 +26,7 @@
  * [ddp-example](ddp-example) — распределенное обучение с PyTorch Distributed Data Parallel (DDP).
  * [hugging-face-llm-example](hugging-face-llm-example) — работа с языковой моделью методами LoRA и PEFT.
  * [lightning-example](lightning-example) — использование PyTorch и PyTorch Lightning для задачи классификации изображений.
+ * [pytorch-elastic-example](pytorch-elastic-example) — обучение модели на PyTorch и Elastic Learning с сохранением контрольных точек обучения (чекпоинтов).
 
 ## Препроцессинг данных
 

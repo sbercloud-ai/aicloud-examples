@@ -120,6 +120,8 @@ def run(rank, size, local_rank):
     device = torch.device(f'cuda:{local_rank}')
     model.to(device)
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)    
+    
+    # Saving checkpoints 
 
     saved_models = None
     last_epoch = 0
