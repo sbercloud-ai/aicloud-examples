@@ -1,10 +1,8 @@
-# Пример обучения модели с использованием PyTorch Elastic Learning
-
-# Пример обучения на GPU в регионе с помощью `client-lib` 
+# Пример обучения на GPU с использованием PyTorch Elastic 
 
 В этом примере рассмотрена отправка задачи обучения на GPU.
 
-Модель обучается с помощью библиотеки `PyTorch Elastic`на датасете `MNIST` путем создания и отправки задачи обучения. Реализовано сохранение контрольных точек обучения, или чекпоинтов.
+Модель обучается с помощью библиотеки `PyTorch`на датасете `MNIST` путем создания и отправки задачи обучения.
 
 Для запуска примера:
 
@@ -13,7 +11,7 @@
 2. Создайте новую папку и загрузите следующие файлы [через веб-интерфейс Jupyter Server](https://mlspace.aicloud.sbercloud.ru/mlspace/jupyter-server) на платформе ML Space:
 
    * [mnist.npz](mnist.npz)— датасет с рукописными цифрами;
-   * [elastic-example.ipynb](elastic-example.ipynb) — Jupyter-ноутбук для загрузки на [сервер](https://console.cloud.ru/projects/);
-   * [train_ddp_elastic_example-torch2.py](train_ddp_elastic_example-torch2.py) — код модели на `Pytorch Elastic`.
+   * [train_pt_elastic.ipynb](train_pt_eastic.ipynb) — Jupyter-ноутбук для запуска задачи обучения
+   * [train_ddp_elastic_example-torch2.py](train_ddp_elastic_example-torch2.py) — код модели на `Pytorch`.
 
-3. Запустите ноутбук [elastic-example.ipynb](elastic-example.ipynb) в интерфейсе Jupyter Server.
+3. Запустите ноутбук [train_pt_elastic.ipynb](train_pt_eastic.ipynb) в интерфейсе Jupyter Server.
