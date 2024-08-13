@@ -8,15 +8,13 @@
 
 1. Напрямую из Jupyter Server, подключенного к GPU
    
-   [Обучение в ноутбуке с GPU](quick-start/notebooks_gpu).
+   * [Обучение в ноутбуке с GPU](quick-start/notebooks_gpu)
 
 2. В регионе с помощью `client-lib` 
 
-   [Обучение на PyTorch](quick-start/job_launch_pt).
-
-   [Обучение на TensorFlow 2](quick-start/job_launch_tf2).
-
-   [Обучение на CPU](quick-start/job_launch_cpu).
+   * [Обучение на PyTorch](quick-start/job_launch_pt)
+   * [Обучение на TensorFlow 2](quick-start/job_launch_tf2)
+   * [Обучение на CPU](quick-start/job_launch_cpu)
 
 ## Другие примеры обучения моделей
 
@@ -29,14 +27,10 @@
 
 ## Препроцессинг данных
 
-* Загрузка/выгрузка данных на S3 в [базовых примерах quick start](quick-start).
+* Загрузка/выгрузка данных на S3 в [базовых примерах quickstart](quick-start).
 * [Работа с Rapids](rapids) — библиотекой, ускоряющей обработку датасетов на GPU.
 * В ноутбуке `Spark_preproc.ipynb` поясняется, как c использованием ресурсов кластера Spark создать SparkSession и SparkContext, загрузить данные на S3 и выполнить препроцессинг этих данных.
 
-## AutoML
+## Public API v2
 
-В [стартовом ноутбуке для AutoML](automl) содержится объяснение, как обновить библиотеки `autowoe` и `lightautoml`, а также как загрузить туториалы из открытых репозиториев на GitHub для знакомства с функционалом библиотек.
-
-## Public API V2
-
-В [ноутбуке public-api-example](public-api-example) содержатся примеры того, как взаимодействовать с публичным API V2.
+В [ноутбуке public-api-example](public-api-example) содержатся примеры того, как взаимодействовать с публичным API v2.
