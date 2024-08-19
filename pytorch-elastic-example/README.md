@@ -14,4 +14,4 @@
    * [train_pt_elastic.ipynb](train_pt_eastic.ipynb) — Jupyter-ноутбук для запуска задачи обучения
    * [train_ddp_elastic_example-torch2.py](train_ddp_elastic_example-torch2.py) — код модели на `Pytorch`.
 
-3. Запустите ноутбук [train_pt_elastic.ipynb](train_pt_eastic.ipynb) в интерфейсе Jupyter Server.
+3. Запустите ноутбук [train_pt_elastic.ipynb](train_pt_elastic.ipynb) в интерфейсе Jupyter Server.
