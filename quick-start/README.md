@@ -38,4 +38,13 @@
 
   В примере решается задача предсказания цен домов.
 
+## 3. Другие примеры обучения моделей
+
+Дополнительные примеры обучения моделей под разные задачи:
+
+ * [pytorch-example](pytorch-example) — задача распределенного обучения Pytorch-модели с двумя типами запуска: стандартный `horovod` и дополнительный `pytorch`, он же `Pytorch.Distributed`.
+ * [hugging-face-llm-example](hugging-face-llm-example) — работа с языковой моделью методами LoRA и PEFT, а также распределенное обучение с PyTorch Distributed Data Parallel (DDP).
+ * [lightning-example](lightning-example) — использование PyTorch и PyTorch Lightning для задачи классификации изображений.
+ * [pytorch-elastic-example](pytorch-elastic-example) — обучение модели на PyTorch и Elastic Learning с сохранением контрольных точек обучения (чекпоинтов).
+
 Подробнее о работе с `client_lib` — в [документации](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/client-lib.html).
