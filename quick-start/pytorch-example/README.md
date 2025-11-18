@@ -10,7 +10,7 @@
 
 Для запуска примера [создайте](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__create-new-jupyter-server.html) или [подключитесь к уже существующему Jupyter Server](https://cloud.ru/ru/docs/aicloud/mlspace/concepts/guides/guides__jupyter/environments__environments__jupyter-server__connect-to-exist.html).
 
-После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри ML Space:
+После подключения к Jupyter Server необходимо загрузить файлы через веб-интерфейс Jupyter Server внутри Distributed Train:
 
  * [pytorch_example.ipynb](pytorch_example.ipynb) (отправка задач на суперкомпьютер Christofari).
  * [train_distributed_example.py](train_distributed_example.py) (распределенное обучение с использованием `DistributedDataParallel` из библиотеки `Pytorch.distributed`)
